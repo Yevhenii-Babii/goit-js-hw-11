@@ -17,6 +17,7 @@ btnEl.addEventListener('click', onButtonClick)
 formEl.addEventListener('submit', OnSubmitClick)
 
 
+
 async function OnSubmitClick (event) {
     event.preventDefault();
     api.page = 1;
@@ -26,6 +27,7 @@ async function OnSubmitClick (event) {
 const responce = await api.fetchPhoto();
 
 const {data} = responce;
+console.log(responce);
 
 if (data.totalHits > 0) {
 Notify.success(`Hooray! We found ${data.totalHits} images`);
@@ -53,6 +55,9 @@ if(data.totalHits === 0) {
   }
 }
 
+
+
+
 async function onButtonClick() {
     api.page +=1 ;
 
@@ -60,7 +65,8 @@ async function onButtonClick() {
         const responce = await api.fetchPhoto()
         
         galleryEL.insertAdjacentHTML('beforeend', galleryCard(responce.data.hits));
-   if (responce.data.Totalhits=== api.per_page) {
+   if (responce.data.Totalhits === api.per_page) {
+    
     btnEl.classList.add('is-hidden'); 
     Notify.info(`We're sorry, but you've reached the end of search results.`);
    }

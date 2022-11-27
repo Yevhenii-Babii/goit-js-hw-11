@@ -27,6 +27,8 @@ export class UnsplashApi{
     }
 
     return axios.get(`${this.#BASE_URL}/api/`,searchParams)
+
+    
 //     return fetch(`${this.#BASE_URL}/api/?${searchParams}`)
 //    .then(response=>{
 //        if(!response.ok){
@@ -34,6 +36,7 @@ export class UnsplashApi{
 //        }
 //        return response.json()
 //    })
+
    }
     }
 }
