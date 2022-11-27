@@ -25,11 +25,16 @@ async function OnSubmitClick (event) {
     api.page = 1;
     api.searchQuery = event.target.searchQuery.value;
   
-    try{
+    try {
 const responce = await api.fetchPhoto();
 
 const {data} = responce;
-console.log(responce);
+
+if(api.searchQuery === '') {
+    galleryEL.innerHTML = '';
+    btnEl.classList.add('is-hidden'); 
+    return
+}
 
 if (data.totalHits > 0) {
 Notify.success(`Hooray! We found ${data.totalHits} images`);
@@ -56,9 +61,6 @@ if(data.totalHits === 0) {
     console.log(err);
   }
 }
-
-
-
 
 async function onButtonClick() {
     
