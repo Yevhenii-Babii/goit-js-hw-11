@@ -31,7 +31,7 @@ console.log(responce);
 
 if (data.totalHits > 0) {
 Notify.success(`Hooray! We found ${data.totalHits} images`);
-galleryEL.innerHTML - ''
+galleryEL.innerHTML = ''
 galleryEL.innerHTML = galleryCard(data.hits);
 btnEl.classList.remove('is-hidden'); 
 
@@ -59,13 +59,14 @@ if(data.totalHits === 0) {
 
 
 async function onButtonClick() {
-    api.page +=1 ;
-
+    
     try { 
         const responce = await api.fetchPhoto()
+        api.page +=1;
+        const totalPages = Math.ceil(responce.data.totalHits/40)
         
         galleryEL.insertAdjacentHTML('beforeend', galleryCard(responce.data.hits));
-   if (responce.data.Totalhits === api.per_page) {
+   if (totalPages < api.page) {
     
     btnEl.classList.add('is-hidden'); 
     Notify.info(`We're sorry, but you've reached the end of search results.`);

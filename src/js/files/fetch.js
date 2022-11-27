@@ -18,7 +18,7 @@ export class UnsplashApi{
         params: {
             q: this.searchQuery,
         page: this.page,
-        per_page:'40',
+        per_page: 40,
         orientation: 'horizontal',
         key: this.#API_KEY,
         image_type: 'photo',
