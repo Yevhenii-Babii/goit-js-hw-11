@@ -1,4 +1,3 @@
-
 'use strict';
 
 import axios from 'axios';
@@ -40,11 +39,3 @@ export class UnsplashApi{
    }
     }
 }
-
-
-
-
-
-
-
-
