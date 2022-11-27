@@ -1,2 +1,3 @@
-import './js/files/indexTest'
-import './js/files/fetch'
+import './indexTest'
+import './fetch'
+import './sass/_form.scss'

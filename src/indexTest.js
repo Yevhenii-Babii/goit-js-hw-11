@@ -1,5 +1,5 @@
 import {UnsplashApi} from './fetch';
-import galleryCard from '../templates/template.hbs';
+import galleryCard from './templates/template.hbs';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm"
 import 'simplelightbox/dist/simple-lightbox.min.css';
