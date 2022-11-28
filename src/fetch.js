@@ -7,7 +7,7 @@ export class UnsplashApi{
     #API_KEY = '31524014-10d0b39f5b957f1cdac0cb3f9'
     constructor() {
         this.page = 1;
-        this.searchQuery = null;
+        this.searchQuery = '';
     }
 
     fetchPhoto() {
